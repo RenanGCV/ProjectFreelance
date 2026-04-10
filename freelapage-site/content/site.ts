@@ -1,23 +1,34 @@
+export const siteConfig = {
+  siteUrl: "https://renan-solutions.com",
+  whatsappNumber: "5511999999999",
+};
+
+export const contactLinks = {
+  whatsapp: `https://wa.me/${siteConfig.whatsappNumber}`,
+  whatsappWithText: (text: string) =>
+    `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(text)}`,
+};
+
 export const siteContent = {
   brand: {
     name: "Renan",
-    role: "Especialista em transformar ideias em solucoes digitais funcionais",
+    role: "Especialista em transformar ideias em soluções digitais funcionais",
     location: "Atendimento remoto",
   },
   hero: {
-    title: "Transformo sua ideia em uma solucao digital real, funcional e pronta para uso",
+    title: "Transformo sua ideia em uma solução digital real, funcional e pronta para uso",
     subtitle:
-      "Seja uma landing page, um sistema simples ou um MVP, eu desenvolvo solucoes rapidas, modernas e pensadas para gerar resultado.",
-    support: "Projetos a partir de R$497 • Entrega rapida",
+      "Seja uma landing page, um sistema simples ou um MVP, eu desenvolvo soluções rápidas, modernas e pensadas para gerar resultado.",
+    support: "Projetos a partir de R$497 • Entrega rápida",
     primaryCta: "Falar no WhatsApp",
     secondaryCta: "Ver projetos",
   },
   problems: [
-    "Voce tem uma ideia, mas nao sabe como tirar do papel",
-    "Seu negocio ainda nao tem uma presenca digital profissional",
-    "Voce depende de processos manuais que tomam tempo",
-    "Ja tentou contratar e nao recebeu algo funcional",
-    "Precisa de algo rapido, com clareza e resultado",
+    "Você tem uma ideia, mas não sabe como tirar do papel",
+    "Seu negócio ainda não tem uma presença digital profissional",
+    "Você depende de processos manuais que tomam tempo",
+    "Já tentou contratar e não recebeu algo funcional",
+    "Precisa de algo rápido, com clareza e resultado",
   ],
   process: [
     {
@@ -26,11 +37,11 @@ export const siteContent = {
     },
     {
       title: "Plano simples",
-      description: "Defino um escopo enxuto para entregar valor rapido.",
+      description: "Defino um escopo enxuto para entregar valor rápido.",
     },
     {
       title: "Desenvolvimento",
-      description: "Construo a solucao com foco em usabilidade e performance.",
+      description: "Construo a solução com foco em usabilidade e performance.",
     },
     {
       title: "Entrega e ajustes",
@@ -38,29 +49,29 @@ export const siteContent = {
     },
   ],
   value: {
-    title: "Valor antes do preco",
+    title: "Valor antes do preço",
     description:
-      "Voce recebe uma solucao pensada para gerar acao: contato, validacao e organizacao do seu fluxo.",
+      "Você recebe uma solução pensada para gerar ação: contato, validação e organização do seu fluxo.",
     bullets: [
-      "Escopo direto ao ponto para nao desperdiçar tempo",
-      "Entrega funcional, nao apenas visual",
-      "Estrutura pronta para evoluir conforme seu negocio cresce",
+      "Escopo direto ao ponto para não desperdiçar tempo",
+      "Entrega funcional, não apenas visual",
+      "Estrutura pronta para evoluir conforme seu negócio cresce",
     ],
   },
   services: [
     {
       title: "Landing pages",
-      description: "Paginas focadas em conversao e presenca digital profissional.",
+      description: "Páginas focadas em conversão e presença digital profissional.",
       price: "A partir de R$497",
     },
     {
       title: "MVPs simples",
-      description: "Prototipos funcionais para validar ideias com usuarios reais.",
+      description: "Protótipos funcionais para validar ideias com usuários reais.",
       price: "A partir de R$1.200",
     },
     {
       title: "Sistemas enxutos",
-      description: "Automacao de fluxos e organizacao de operacoes do dia a dia.",
+      description: "Automação de fluxos e organização de operações do dia a dia.",
       price: "Sob escopo",
     },
   ],
@@ -69,63 +80,63 @@ export const siteContent = {
       name: "Entrada",
       label: "Landing essencial",
       price: "A partir de R$497",
-      detail: "Para quem precisa comecar rapido com presenca digital profissional.",
+      detail: "Para quem precisa começar rápido com presença digital profissional.",
     },
     {
       name: "Principal",
       label: "Landing estruturada",
       price: "R$897 a R$1.497",
-      detail: "Para quem quer uma pagina mais robusta com narrativa de conversao completa.",
+      detail: "Para quem quer uma página mais robusta com narrativa de conversão completa.",
     },
     {
-      name: "Expansao",
+      name: "Expansão",
       label: "MVP ou sistema enxuto",
       price: "A partir de R$1.200",
-      detail: "Para validar ideias e reduzir operacao manual com fluxo funcional.",
+      detail: "Para validar ideias e reduzir operação manual com fluxo funcional.",
     },
   ],
   differentials: [
     "Rapidez para tirar ideias do papel",
-    "Foco em resultado pratico, nao so visual",
-    "Comunicacao clara do inicio ao fim",
-    "Codigo organizado e facil de evoluir",
-    "Visao de negocio alem da implementacao tecnica",
+    "Foco em resultado prático, não só visual",
+    "Comunicação clara do início ao fim",
+    "Código organizado e fácil de evoluir",
+    "Visão de negócio além da implementação técnica",
   ],
   projects: [
     {
-      name: "Validador de servico local",
-      problem: "Profissional autonomo sem presenca digital e sem canal de captacao.",
-      solution: "Landing page com oferta clara, CTA para WhatsApp e formulario enxuto.",
+      name: "Validador de serviço local",
+      problem: "Profissional autônomo sem presença digital e sem canal de captação.",
+      solution: "Landing page com oferta clara, CTA para WhatsApp e formulário enxuto.",
     },
     {
-      name: "Pre-agendamento para atendimento",
+      name: "Pré-agendamento para atendimento",
       problem: "Atendimento manual causando perda de leads e demora nas respostas.",
-      solution: "Fluxo simples com formulario e mensagem automatizada de entrada.",
+      solution: "Fluxo simples com formulário e mensagem automatizada de entrada.",
     },
     {
       name: "MVP para ideia de nicho",
-      problem: "Ideia boa sem prototipo funcional para teste real com usuarios.",
-      solution: "MVP de baixa complexidade para validar adesao rapidamente.",
+      problem: "Ideia boa sem protótipo funcional para teste real com usuários.",
+      solution: "MVP de baixa complexidade para validar adesão rapidamente.",
     },
   ],
   faq: [
     {
-      question: "Qual o prazo medio de entrega?",
+      question: "Qual o prazo médio de entrega?",
       answer: "Projetos simples costumam ser entregues em cerca de 1 semana.",
     },
     {
-      question: "Voce faz ajustes apos a entrega?",
-      answer: "Sim. Definimos juntos um periodo de ajustes para refinamentos finais.",
+      question: "Você faz ajustes após a entrega?",
+      answer: "Sim. Definimos juntos um período de ajustes para refinamentos finais.",
     },
     {
-      question: "Quais tipos de projeto voce atende?",
-      answer: "Landing pages, MVPs e sistemas enxutos para necessidades especificas.",
+      question: "Quais tipos de projeto você atende?",
+      answer: "Landing pages, MVPs e sistemas enxutos para necessidades específicas.",
     },
   ],
   ctas: {
     mid: "Vamos conversar sobre a sua ideia",
-    midSupport: "Em poucos minutos eu te digo o melhor caminho para comecar sem complicar.",
-    final: "Sua ideia nao precisa ficar so no papel",
+    midSupport: "Em poucos minutos eu te digo o melhor caminho para começar sem complicar.",
+    final: "Sua ideia não precisa ficar só no papel",
     action: "Falar no WhatsApp agora",
   },
 };

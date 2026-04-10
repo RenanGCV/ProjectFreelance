@@ -1,119 +1,76 @@
-# 🎨 Manual de Marca — Landing Page Renan
+# Manual de Marca - Landing Page Renan (Padrao 2026)
 
-## 🎯 Objetivo da Marca
-Criar uma identidade visual moderna, tecnológica e confiável, transmitindo:
-- Profissionalismo
-- Agilidade
-- Clareza
-- Inovação acessível
+## Objetivo da Marca
+Transmitir uma identidade premium, moderna e confiavel com foco em:
+- profissionalismo
+- clareza
+- agilidade
+- conversao
 
----
+## Direcao Visual
+- linguagem visual escura com acentos verdes vibrantes
+- contraste alto para leitura rapida
+- componentes com profundidade e glow controlado
+- atmosfera tecnologica com grade sutil no fundo
 
-## 🎨 Paleta de Cores
+## Paleta de Cores
 
-### 🔹 Cores Principais
-- #034159 → Fundo principal (base escura)
-- #025951 → Seções secundárias
-- #02735E → Cards e elementos de UI
+### Cores Principais
+- `#001B1F` - Rich Black (fundo principal)
+- `#032221` - Dark Green (superficies profundas)
+- `#03624C` - Bangladesh Green (cards)
+- `#2CC295` - Mountain Meadow (interacoes)
+- `#0DDF81` - Caribbean Green (CTA e destaque)
+- `#F1F7F6` - Anti-Flash White (texto claro)
 
-### 🔹 Cores de Destaque
-- #038C3E → Hover e interações
-- #0CF25D → CTA (botões principais)
+### Cores Secundarias
+- `#06302B` - Pine
+- `#0B453A` - Basil
+- `#095544` - Forest
+- `#17876D` - Frog
+- `#2FA98C` - Mint
+- `#707D7D` - Stone
+- `#AACBC4` - Pistachio
 
-### ⚠️ Regras de Uso
-- CTA sempre em #0CF25D
-- Evitar usar verde claro em textos longos
-- Garantir contraste com fundo escuro
-- Alternar seções entre #034159 e #025951
+## Regras de Uso
+- CTA principal sempre em `#0DDF81` com texto escuro
+- fundo base sempre escuro (`#001B1F`) com gradiente verde-azulado
+- evitar blocos com fundo solido muito diferente do fundo global
+- usar glow neon apenas em pontos de atencao (CTA, oferta, destaque)
 
----
+## Tipografia
+- Familia de referencia: Aixforma (Regular, Medium, SemiBold)
+- Substituicao tecnica para web app:
+- Titulo: Sora (600, 700, 800)
+- Corpo: Manrope (400, 500, 600)
 
-## 🔤 Tipografia
+## Componentes
+- botoes: raio medio, glow moderado, hover com elevacao leve
+- cards: borda sutil, profundidade 3D discreta, brilho especular no hover
+- formulario: visual limpo, foco de campo com acento verde
 
-### Fonte Principal (Headings)
-- Poppins
-- Uso: títulos e destaques
-- Estilo: SemiBold / Bold
+## Background
+- toda a pagina deve compartilhar o mesmo fundo
+- usar gradiente global com linhas sutis de grade
+- sem separacao de fundo por secao
 
-### Fonte Secundária (Texto)
-- Inter
-- Uso: parágrafos e conteúdo
-- Estilo: Regular / Medium
+## Animacoes
+- usar framer-motion e GSAP com foco em fluidez
+- movimentos curtos e suaves (entrada, flotacao, hover)
+- respeitar `prefers-reduced-motion`
 
-### Hierarquia
-- H1: grande e impactante
-- H2: seções
-- H3: subtítulos
-- Body: leitura confortável
-
----
-
-## 🧱 Estilo Visual
-
-### Diretrizes
-- Design moderno e ousado
-- Aparência premium acessível
-- Layout limpo com espaçamento generoso
-- Uso de animações sutis
-
-### Componentes
-
-#### Botões
-- Cor: #0CF25D
-- Texto: escuro
-- Hover: #038C3E
-- Bordas levemente arredondadas
-
-#### Cards
-- Fundo: #02735E
-- Sombra leve
-- Borda sutil
-
-#### Background
-- Base escura (#034159)
-- Seções alternadas (#025951)
-
----
-
-## 🎬 Animações
-
-### Ferramentas
-- GSAP
-- Framer Motion
-
-### Diretrizes
-- Usar animações para guiar atenção
-- Evitar exageros
-- Priorizar performance
-
----
-
-## 📱 Experiência do Usuário
-
-- Layout responsivo
-- Navegação simples
-- CTA sempre visível
-- Foco em clareza
-
----
-
-## 🧠 Percepção Desejada
-
-O usuário deve sentir:
-- Confiança
-- Clareza
-- Profissionalismo
-- Facilidade
+## Percepcao Desejada
+O usuario deve perceber:
+- confianca
+- sofisticacao
+- clareza comercial
+- tecnologia aplicada ao resultado
 
 Evitar:
-- Visual genérico
-- Excesso de informação
-- Confusão visual
+- excesso de brilho
+- excesso de elementos concorrendo por atencao
+- visual generico
 
----
-
-## 🚀 Resumo
-
-A marca deve transmitir:
-"Tecnologia acessível, soluções rápidas e profissionais"
+## Resumo de Posicionamento
+"Solucoes digitais com linguagem premium, foco em resultado e experiencia moderna"
 

@@ -1,9 +1,10 @@
+import { siteConfig } from "@/content/site";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://renan-solutions.com",
+      url: siteConfig.siteUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

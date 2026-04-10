@@ -16,6 +16,7 @@ export function HeroOrbs() {
         y: 26,
         duration: 4.8,
         ease: "sine.inOut",
+        force3D: true,
         repeat: -1,
         yoyo: true,
       });
@@ -25,6 +26,7 @@ export function HeroOrbs() {
         y: -18,
         duration: 5.4,
         ease: "sine.inOut",
+        force3D: true,
         repeat: -1,
         yoyo: true,
       });
@@ -38,12 +40,12 @@ export function HeroOrbs() {
       <div
         ref={orbA}
         aria-hidden
-        className="pointer-events-none absolute -left-28 top-6 h-64 w-64 rounded-full bg-brand-primary/10 blur-3xl"
+        className="pointer-events-none absolute -left-28 top-6 h-64 w-64 rounded-full bg-brand-primary/10 blur-3xl will-change-transform"
       />
       <div
         ref={orbB}
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-32 h-72 w-72 rounded-full bg-emerald-300/10 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-32 h-72 w-72 rounded-full bg-emerald-300/10 blur-3xl will-change-transform"
       />
     </>
   );

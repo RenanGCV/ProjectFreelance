@@ -1,3 +1,4 @@
+import { siteConfig } from "@/content/site";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://renan-solutions.com/sitemap.xml",
+    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
   };
 }
