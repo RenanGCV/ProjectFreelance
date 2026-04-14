@@ -5,7 +5,7 @@ export function AvailabilityChip() {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-primary/75" />
         <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-primary" />
       </span>
-      Disponivel para novos projetos
+      Disponível para novos projetos
     </div>
   );
 }

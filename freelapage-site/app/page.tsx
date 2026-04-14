@@ -4,9 +4,11 @@ import { ContactForm } from "@/components/sections/contact-form";
 import { AnimatedWaveBg } from "@/components/ui/animated-wave-bg";
 import { AvailabilityChip } from "@/components/ui/availability-chip";
 import { HeroOrbs } from "@/components/ui/hero-orbs";
+import { PhotoCarousel } from "@/components/ui/photo-carousel";
+import { LottiePlayer } from "@/components/ui/lottie-player";
 import { Cascade, CascadeItem, Float, Reveal } from "@/components/ui/reveal";
 import { contactLinks, siteContent } from "@/content/site";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, ArrowUpRight, CheckCircle2, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -42,6 +44,34 @@ function Section({
     </section>
   );
 }
+
+const headerContainerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: -20,
+    transition: {
+      duration: 0.22,
+      ease: "easeIn" as const,
+      staggerChildren: 0.06,
+      staggerDirection: -1,
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.22, 1, 0.36, 1] as const,
+      staggerChildren: 0.09,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const headerItemVariants: Variants = {
+  hidden: { opacity: 0, y: -10, transition: { duration: 0.18, ease: "easeIn" as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.32, ease: "easeOut" as const } },
+};
 
 export default function Home() {
   const whatsappLink = contactLinks.whatsapp;
@@ -85,49 +115,65 @@ export default function Home() {
   return (
     <div className="relative flex flex-col">
       <AnimatedWaveBg />
+      {/* ── Header flutuante com bordas arredondadas e animação de cascata ── */}
       <motion.header
-        initial={false}
-        animate={{
-          opacity: isHeaderHidden ? 0 : 1,
-          y: isHeaderHidden ? -28 : 0,
-        }}
-        transition={{ duration: 0.28, ease: "easeOut" }}
+        variants={headerContainerVariants}
+        initial="visible"
+        animate={isHeaderHidden ? "hidden" : "visible"}
         style={{ pointerEvents: isHeaderHidden ? "none" : "auto" }}
-        className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#022a3a]/72 backdrop-blur-md will-change-transform"
+        className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 will-change-transform"
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-brand-primary">Renan</p>
-            <p className="text-sm text-slate-200">Soluções digitais funcionais</p>
+        <div className="pointer-events-auto mx-auto w-full max-w-6xl rounded-2xl border border-white/10 bg-[#022a3a]/80 shadow-lg shadow-black/20 backdrop-blur-md">
+          <div className="flex items-center justify-between px-5 py-3.5 sm:px-8">
+
+            {/* Logo */}
+            <motion.div variants={headerItemVariants}>
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-primary">Renan</p>
+              <p className="text-sm text-slate-200">Soluções digitais funcionais</p>
+            </motion.div>
+
+            {/* Nav */}
+            <motion.nav
+              variants={headerItemVariants}
+              className="hidden items-center gap-5 text-sm text-slate-200/90 md:flex"
+            >
+              <Link href="#servicos" className="transition-colors hover:text-brand-primary">
+                Serviços
+              </Link>
+              <Link href="#precos" className="transition-colors hover:text-brand-primary">
+                Preços
+              </Link>
+              <Link href="#diferenciais" className="transition-colors hover:text-brand-primary">
+                Diferenciais
+              </Link>
+              <Link href="#projetos" className="transition-colors hover:text-brand-primary">
+                Projetos
+              </Link>
+              <Link href="#faq" className="transition-colors hover:text-brand-primary">
+                FAQ
+              </Link>
+              <Link href="#contato" className="transition-colors hover:text-brand-primary">
+                Contato
+              </Link>
+            </motion.nav>
+
+            {/* CTA */}
+            <motion.div variants={headerItemVariants}>
+              <Link
+                href={whatsappLink}
+                target="_blank"
+                className="attention-hover neon-cta cta-highlight depth-3d inline-flex items-center gap-2 rounded-xl bg-brand-primary px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-brand-accent"
+              >
+                WhatsApp
+                <ArrowUpRight size={16} />
+              </Link>
+            </motion.div>
+
           </div>
-
-          <nav className="hidden items-center gap-5 text-sm text-slate-200/90 md:flex">
-            <Link href="#servicos" className="hover:text-brand-primary">
-              Serviços
-            </Link>
-            <Link href="#diferenciais" className="hover:text-brand-primary">
-              Diferenciais
-            </Link>
-            <Link href="#projetos" className="hover:text-brand-primary">
-              Projetos
-            </Link>
-            <Link href="#faq" className="hover:text-brand-primary">
-              FAQ
-            </Link>
-          </nav>
-
-          <Link
-            href={whatsappLink}
-            target="_blank"
-            className="attention-hover neon-cta cta-highlight depth-3d inline-flex items-center gap-2 rounded-xl bg-brand-primary px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-brand-accent"
-          >
-            WhatsApp
-            <ArrowUpRight size={16} />
-          </Link>
         </div>
       </motion.header>
 
-      <main className="interactive-zone relative z-10 pt-20">
+      <main className="interactive-zone relative z-10 pt-24">
         <section className="relative py-20 sm:py-28">
           <HeroOrbs />
           <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 lg:grid-cols-12 sm:px-8">
@@ -187,27 +233,12 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.15} className="lg:col-span-5">
-              <Float duration={6} distance={10}>
-                <div className="attention-hover neon-surface depth-3d relative rounded-[28px] border border-white/10 bg-black/20 p-7 shadow-2xl shadow-black/25 backdrop-blur">
-                  <p className="text-xs uppercase tracking-[0.18em] text-brand-primary">Direção</p>
-                  <h2 className="mt-2 text-2xl font-bold">Tecnologia acessível, com impacto de negócio</h2>
-                  <p className="text-contrast-medium mt-3">
-                    O cliente final não quer um site bonito. Ele quer mais contatos, validação rápida
-                    e operação mais simples. É isso que guia cada decisão desta página.
-                  </p>
-                  <ul className="mt-6 grid gap-3 text-sm text-slate-200">
-                    {siteContent.differentials.slice(0, 4).map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                      >
-                        <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-brand-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="flex flex-col gap-16">
+                <PhotoCarousel />
+                <div className="-mx-6 sm:-mx-8 lg:-mx-10">
+                  <LottiePlayer />
                 </div>
-              </Float>
+              </div>
             </Reveal>
           </div>
         </section>
@@ -255,11 +286,17 @@ export default function Home() {
           title="Eu transformo sua ideia em algo real"
           subtitle="Meu foco não é apenas desenvolver, é entregar algo funcional e pronto para uso."
         >
-          <div data-interactive="true" className="rounded-2xl border border-white/15 bg-brand-card/70 p-7">
-            <p className="max-w-3xl text-lg text-slate-100">
+          <div data-interactive="true" className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 rounded-2xl border border-white/15 bg-brand-card/70 p-7">
+            <p className="text-lg text-slate-100">
               Clareza de escopo, entrega enxuta e aplicação prática desde o primeiro dia. Sem
               enrolação e sem excesso de complexidade para quem precisa de resultado rápido.
             </p>
+            <div className="flex justify-center -mx-4 md:mx-0">
+               <LottiePlayer 
+                 src="https://lottie.host/2c81dd2a-68d6-40d1-aa8e-5335d726789a/i6GIwMWC8e.lottie" 
+                 className="w-full max-w-[300px]" 
+               />
+            </div>
           </div>
         </Section>
 
@@ -336,6 +373,7 @@ export default function Home() {
             ))}
           </Cascade>
         </Section>
+
 
         <Section
           id="projetos"

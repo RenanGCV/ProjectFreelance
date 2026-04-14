@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 const cascadeParentVariants = {
@@ -13,12 +13,12 @@ const cascadeParentVariants = {
   },
 };
 
-const cascadeItemVariants = {
+const cascadeItemVariants: Variants = {
   hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.45, ease: "easeOut" },
+    transition: { duration: 0.45, ease: "easeOut" as const },
   },
 };
 

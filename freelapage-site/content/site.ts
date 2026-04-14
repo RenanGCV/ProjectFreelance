@@ -1,6 +1,7 @@
 export const siteConfig = {
+  // TODO: substituir pela URL real do site antes de publicar
   siteUrl: "https://renan-solutions.com",
-  whatsappNumber: "5511999999999",
+  whatsappNumber: "5521972661951",
 };
 
 export const contactLinks = {
