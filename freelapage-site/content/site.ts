@@ -2,6 +2,22 @@ export const siteConfig = {
   // TODO: substituir pela URL real do site antes de publicar
   siteUrl: "https://renan-solutions.com",
   whatsappNumber: "5521972661951",
+  seo: {
+    title: "Renan | Freelancer Especialista em Landing Pages e Sistemas Enxutos",
+    description:
+      "Transformo sua ideia em uma solução digital funcional e pronta para uso. Especialista em criação de landing pages, sistemas simples e MVPs focados em conversão e resultados.",
+    keywords: [
+      "Desenvolvedor freelancer",
+      "Criar landing page",
+      "Desenvolvimento de MVP",
+      "Sistemas enxutos",
+      "Web design",
+      "Programador front-end",
+      "Soluções digitais",
+      "Foco em conversão",
+    ],
+    author: "Renan",
+  },
 };
 
 export const contactLinks = {

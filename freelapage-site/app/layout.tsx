@@ -17,20 +17,47 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
-  title: "Renan | Soluções digitais funcionais",
-  description:
-    "Landing page para captação de clientes com foco em resultado, clareza e entrega rápida.",
+  title: siteConfig.seo.title,
+  description: siteConfig.seo.description,
+  keywords: siteConfig.seo.keywords,
+  authors: [{ name: siteConfig.seo.author }],
+  creator: siteConfig.seo.author,
   openGraph: {
-    title: "Renan | Soluções digitais funcionais",
-    description:
-      "Landing page para captação de clientes com foco em resultado, clareza e entrega rápida.",
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
     url: siteConfig.siteUrl,
-    siteName: "Renan",
+    siteName: siteConfig.seo.author,
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg", // Create this file later or adapt paths as necessary
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.seo.author} | Desenvolvimento Web Freestyle`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    creator: "@your_twitter_handle", // Optional, adjust if the user has a handle
+    images: ["/og-image.jpg"], // Ensure to match opengraph image
   },
   alternates: {
     canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
