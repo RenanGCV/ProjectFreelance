@@ -122,7 +122,7 @@ export function PhotoCarousel() {
               aria-label={`Ir para foto ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${
                 i === page
-                  ? "h-1.5 w-6 bg-brand-primary shadow-[0_0_8px_rgba(13,223,129,0.7)]"
+                  ? "h-1.5 w-6 bg-brand-primary shadow-[0_0_8px_rgba(168,85,247,0.7)]"
                   : "h-1.5 w-1.5 bg-white/40 hover:bg-white/70"
               }`}
             />

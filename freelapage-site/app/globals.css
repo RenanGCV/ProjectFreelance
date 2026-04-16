@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #001b1f;
-  --foreground: #f1f7f6;
-  --surface: #032221;
-  --card: #03624c;
-  --accent: #2cc295;
-  --primary: #0ddf81;
+  --background: #05010f;
+  --foreground: #f0eeff;
+  --surface: #120a2e;
+  --card: #1a0a3d;
+  --accent: #7c3aed;
+  --primary: #a855f7;
 }
 
 @theme inline {
@@ -28,14 +28,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
   background-image:
-    linear-gradient(rgb(13 223 129 / 4%) 1px, transparent 1px),
-    linear-gradient(to right, rgb(13 223 129 / 4%) 1px, transparent 1px),
-    radial-gradient(120% 70% at 50% -10%, rgb(33 134 95 / 58%) 0%, transparent 50%),
-    radial-gradient(55% 45% at 50% 35%, rgb(1 25 27 / 72%) 0%, transparent 70%),
-    radial-gradient(70% 50% at 50% 92%, rgb(13 223 129 / 34%) 0%, transparent 68%),
-    linear-gradient(180deg, #0e6c53 0%, #0b5645 22%, #083e37 55%, #0f674e 100%);
-  background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    radial-gradient(80% 55% at 50% -10%, rgba(139, 92, 246, 0.38) 0%, transparent 65%),
+    radial-gradient(55% 40% at 85% 55%, rgba(168, 85, 247, 0.16) 0%, transparent 55%),
+    radial-gradient(45% 35% at 15% 70%, rgba(109, 40, 217, 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, #08001a 0%, #0a0320 40%, #06010f 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -47,18 +45,55 @@ h4 {
   font-family: var(--font-heading), sans-serif;
 }
 
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 45%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .text-contrast-strong {
-  color: #f7fffc;
+  color: #f5f0ff;
   text-shadow:
-    0 2px 10px rgb(0 0 0 / 42%),
-    0 0 1px rgb(255 255 255 / 12%);
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .text-contrast-medium {
-  color: rgb(236 255 247 / 92%);
-  text-shadow: 0 1px 8px rgb(0 0 0 / 30%);
+  color: rgba(230, 220, 255, 0.88);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
+/* ── Glass border (gradient mask — Voxr style) ── */
+.glass-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.glass-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    200deg,
+    rgba(192, 132, 252, 0.65) 0%,
+    rgba(192, 132, 252, 0) 40%,
+    rgba(192, 132, 252, 0) 60%,
+    rgba(192, 132, 252, 0.65) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Hover & interaction ── */
 .attention-hover {
   transition:
     transform 180ms ease,
@@ -70,7 +105,7 @@ h4 {
 
 .attention-hover:hover {
   transform: translateY(-2px);
-  filter: saturate(1.05);
+  filter: saturate(1.08);
 }
 
 .attention-hover:focus-visible {
@@ -78,33 +113,36 @@ h4 {
   transform: translateY(-1px);
 }
 
+/* ── Neon surface ── */
 .neon-surface {
   box-shadow:
-    0 0 0 1px rgb(13 223 129 / 12%) inset,
-    0 0 24px rgb(13 223 129 / 10%);
+    0 0 0 1px rgba(168, 85, 247, 0.1) inset,
+    0 0 24px rgba(168, 85, 247, 0.08);
 }
 
 .neon-surface:hover {
-  border-color: rgb(13 223 129 / 42%) !important;
+  border-color: rgba(168, 85, 247, 0.4) !important;
   box-shadow:
-    0 0 0 1px rgb(13 223 129 / 28%) inset,
-    0 0 30px rgb(13 223 129 / 20%),
-    0 8px 24px rgb(0 0 0 / 30%);
+    0 0 0 1px rgba(168, 85, 247, 0.25) inset,
+    0 0 32px rgba(168, 85, 247, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+/* ── Neon CTA ── */
 .neon-cta {
   box-shadow:
-    0 0 0 1px rgb(13 223 129 / 18%) inset,
-    0 0 22px rgb(13 223 129 / 24%);
+    0 0 0 1px rgba(168, 85, 247, 0.2) inset,
+    0 0 24px rgba(168, 85, 247, 0.28);
 }
 
 .neon-cta:hover {
   box-shadow:
-    0 0 0 1px rgb(13 223 129 / 42%) inset,
-    0 0 34px rgb(13 223 129 / 38%),
-    0 10px 30px rgb(0 0 0 / 36%);
+    0 0 0 1px rgba(168, 85, 247, 0.45) inset,
+    0 0 38px rgba(168, 85, 247, 0.42),
+    0 10px 32px rgba(0, 0, 0, 0.38);
 }
 
+/* ── Depth 3D hover ── */
 .depth-3d {
   position: relative;
   transform-style: preserve-3d;
@@ -113,8 +151,8 @@ h4 {
     box-shadow 260ms ease,
     border-color 240ms ease;
   box-shadow:
-    0 14px 28px rgb(0 0 0 / 20%),
-    0 2px 8px rgb(0 0 0 / 24%);
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.28);
 }
 
 .depth-3d::before {
@@ -124,15 +162,15 @@ h4 {
   border-radius: inherit;
   pointer-events: none;
   opacity: 0;
-  background: linear-gradient(135deg, rgb(255 255 255 / 12%) 0%, rgb(255 255 255 / 2%) 38%, transparent 68%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 38%, transparent 68%);
   transition: opacity 260ms ease;
 }
 
 .depth-3d:hover {
   transform: perspective(1000px) translateY(-5px) rotateX(3deg) rotateY(-3deg);
   box-shadow:
-    0 22px 42px rgb(0 0 0 / 30%),
-    0 8px 18px rgb(0 0 0 / 26%);
+    0 22px 44px rgba(0, 0, 0, 0.32),
+    0 8px 18px rgba(0, 0, 0, 0.28);
 }
 
 .depth-3d:hover::before {
@@ -143,6 +181,7 @@ h4 {
   transform: perspective(1000px) translateY(-3px) rotateX(2deg) rotateY(-2deg);
 }
 
+/* ── CTA shimmer ── */
 .cta-highlight {
   position: relative;
 }
@@ -153,11 +192,12 @@ h4 {
   inset: -1px;
   border-radius: inherit;
   pointer-events: none;
-  background: radial-gradient(circle at 12% 8%, rgb(13 223 129 / 26%), transparent 46%);
+  background: radial-gradient(circle at 12% 8%, rgba(192, 132, 252, 0.3), transparent 48%);
   mix-blend-mode: screen;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
+/* ── Interactive zone ── */
 .interactive-zone :where(article, [data-interactive="true"]) {
   cursor: pointer;
   transition:
@@ -169,15 +209,28 @@ h4 {
 
 .interactive-zone :where(article, [data-interactive="true"]):hover {
   transform: translateY(-3px);
-  border-color: rgb(13 223 129 / 30%);
+  border-color: rgba(168, 85, 247, 0.28);
   box-shadow:
-    0 10px 24px rgb(0 0 0 / 26%),
-    0 0 0 1px rgb(13 223 129 / 18%) inset;
+    0 10px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(168, 85, 247, 0.16) inset;
 }
 
 .interactive-zone :where(article, [data-interactive="true"]):focus-visible {
   outline: none;
   transform: translateY(-2px);
+}
+
+/* ── Timeline connector ── */
+.timeline-line {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0.1) 100%);
+}
+
+/* ── Stats section ── */
+.stat-number {
+  background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 50%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (prefers-reduced-motion: reduce) {

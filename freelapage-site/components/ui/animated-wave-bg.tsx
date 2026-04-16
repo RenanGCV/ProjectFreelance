@@ -63,9 +63,9 @@ export function AnimatedWaveBg() {
       ctx.clearRect(0, 0, width, height);
 
       // Camadas de ondas com fases e frequencias distintas para um movimento organico.
-      drawLayer(time, height * 0.68, 36, 0.012, 1.7, 0.22, "#1aa76f", 0.2);
-      drawLayer(time, height * 0.73, 42, 0.009, 1.2, 0.18, "#0ddf81", 1.6);
-      drawLayer(time, height * 0.79, 30, 0.014, 2.1, 0.12, "#2fa98c", 2.7);
+      drawLayer(time, height * 0.68, 36, 0.012, 1.7, 0.22, "#7c3aed", 0.2);
+      drawLayer(time, height * 0.73, 42, 0.009, 1.2, 0.18, "#a855f7", 1.6);
+      drawLayer(time, height * 0.79, 30, 0.014, 2.1, 0.12, "#9333ea", 2.7);
 
       ctx.globalAlpha = 1;
       animationId = window.requestAnimationFrame(render);
@@ -89,7 +89,7 @@ export function AnimatedWaveBg() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden>
       <canvas ref={canvasRef} className="h-full w-full scale-105 opacity-60 blur-[8px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_80%,rgba(13,223,129,0.22),transparent_75%)] blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_80%,rgba(139,92,246,0.22),transparent_75%)] blur-3xl" />
     </div>
   );
 }
